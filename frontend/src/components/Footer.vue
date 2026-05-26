@@ -16,10 +16,10 @@
       <div>
         <p class="font-bold text-[#FFD600]">Menu</p>
         <div class="mt-4 grid gap-2 text-sm text-white/65">
-          <a class="hover:text-[#FFD600]" href="#home">Home</a>
-          <a class="hover:text-[#FFD600]" href="#who-we-are">Who We Are</a>
-          <a class="hover:text-[#FFD600]" href="#services">Services</a>
-          <a class="hover:text-[#FFD600]" href="#contact-us">Contact Us</a>
+          <router-link class="hover:text-[#FFD600]" to="/">Home</router-link>
+          <router-link class="hover:text-[#FFD600]" to="/who-we-are">Who We Are</router-link>
+          <router-link class="hover:text-[#FFD600]" to="/services">Services</router-link>
+          <router-link class="hover:text-[#FFD600]" to="/contact-us">Contact Us</router-link>
         </div>
       </div>
 
