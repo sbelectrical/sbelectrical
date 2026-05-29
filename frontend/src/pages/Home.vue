@@ -59,50 +59,50 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen overflow-hidden bg-[#0a0a0a] text-white">
-    <section class="px-4 py-10 sm:px-6 lg:px-8">
+    <section class="px-4 py-6 sm:px-6 sm:py-10 lg:px-8">
       <div class="mx-auto max-w-7xl">
-        <div class="relative overflow-hidden rounded-[2rem] bg-[#111] shadow-2xl">
-          <div class="relative aspect-[16/7] min-h-[420px]">
+        <div class="relative overflow-hidden rounded-2xl bg-[#111] shadow-2xl sm:rounded-[2rem]">
+          <div class="relative aspect-[4/3] min-h-[300px] sm:aspect-[16/7] sm:min-h-[420px]">
             <template v-for="(slide, index) in slides" :key="slide.title">
               <div
                 class="absolute inset-0 transition-opacity duration-700"
                 :class="currentSlide === index ? 'opacity-100' : 'opacity-0'"
               >
-                <img :src="slide.image" :alt="slide.title" class="absolute inset-0 h-full w-full object-cover block" loading="lazy" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
-                <div class="absolute bottom-8 left-8 right-8 text-white md:bottom-12 md:left-12">
-                  <p class="text-sm uppercase tracking-[0.3em] text-[#FFD600]">SB Electrical</p>
-                  <h2 class="mt-3 text-3xl font-black sm:text-4xl lg:text-5xl">{{ slide.title }}</h2>
-                  <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80">{{ slide.subtitle }}</p>
+                <img :src="slide.image" :alt="slide.title" class="absolute inset-0 block h-full w-full object-cover object-center" loading="lazy" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/5 sm:from-black/85 sm:via-black/10 sm:to-transparent"></div>
+                <div class="absolute bottom-10 left-5 right-5 text-white sm:bottom-8 sm:left-8 sm:right-8 md:bottom-12 md:left-12">
+                  <p class="text-xs font-bold uppercase tracking-[0.28em] text-[#FFD600] sm:text-sm sm:tracking-[0.3em]">SB Electrical</p>
+                  <h2 class="mt-2 max-w-[16rem] text-2xl font-black leading-tight sm:mt-3 sm:max-w-none sm:text-4xl lg:text-5xl">{{ slide.title }}</h2>
+                  <p class="mt-3 max-w-[18rem] text-xs leading-5 text-white/80 sm:mt-4 sm:max-w-2xl sm:text-sm sm:leading-6">{{ slide.subtitle }}</p>
                 </div>
               </div>
             </template>
           </div>
 
-          <div class="absolute left-4 top-1/2 flex -translate-y-1/2 gap-2 md:left-6">
+          <div class="absolute left-5 top-5 flex gap-2 sm:left-4 sm:top-1/2 sm:-translate-y-1/2 md:left-6">
             <button
               @click="setSlide((currentSlide + slides.length - 1) % slides.length)"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white transition hover:bg-black/70"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/45 text-sm text-white transition hover:bg-black/70 sm:h-11 sm:w-11 sm:text-base"
               aria-label="Previous slide"
             >
               ‹
             </button>
             <button
               @click="setSlide((currentSlide + 1) % slides.length)"
-              class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/40 text-white transition hover:bg-black/70"
+              class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/45 text-sm text-white transition hover:bg-black/70 sm:h-11 sm:w-11 sm:text-base"
               aria-label="Next slide"
             >
               ›
             </button>
           </div>
 
-          <div class="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+          <div class="absolute bottom-4 left-5 flex gap-2 sm:left-1/2 sm:-translate-x-1/2">
             <button
               v-for="(_, index) in slides"
               :key="index"
               @click="setSlide(index)"
               :class="[
-                'h-3 w-3 rounded-full transition',
+                'h-2.5 w-2.5 rounded-full transition sm:h-3 sm:w-3',
                 currentSlide === index ? 'bg-white' : 'bg-white/40',
               ]"
               aria-label="Select slide"
