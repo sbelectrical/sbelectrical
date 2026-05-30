@@ -2,10 +2,44 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const services = [
-  'Electrical repairs',
-  'Panel upgrades',
-  'Lighting installs',
-  'EV chargers',
+  {
+    title: 'Electrical repairs',
+    copy: 'Troubleshooting for outlets, breakers, switches, fixtures, and wiring issues that need a careful fix.',
+    tag: 'Repair',
+  },
+  {
+    title: 'Panel upgrades',
+    copy: 'Panel replacement, breaker upgrades, meter service, and safer capacity for modern electrical loads.',
+    tag: 'Power',
+  },
+  {
+    title: 'Lighting installs',
+    copy: 'Indoor, outdoor, security, and efficiency-focused lighting installed cleanly for homes and businesses.',
+    tag: 'Lighting',
+  },
+  {
+    title: 'EV chargers',
+    copy: 'Home charger wiring, circuit checks, and practical setup guidance for electric vehicles.',
+    tag: 'EV Ready',
+  },
+]
+
+const processSteps = [
+  {
+    label: 'Listen',
+    title: 'Tell us what is happening',
+    copy: 'We start with the issue, location, urgency, and any safety concerns so the visit is planned properly.',
+  },
+  {
+    label: 'Inspect',
+    title: 'Check the electrical system',
+    copy: 'We look for the real cause, explain what we find, and outline the safest repair or upgrade path.',
+  },
+  {
+    label: 'Complete',
+    title: 'Finish cleanly and clearly',
+    copy: 'The work is completed with care, the area is left tidy, and you know exactly what was done.',
+  },
 ]
 
 const currentSlide = ref(0)
@@ -112,6 +146,52 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <section class="border-y border-white/10 bg-[#0a0a0a] px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Who We Are</p>
+          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Local electricians serving Calgary homes and businesses</h2>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-[#9ca3af]">
+            SB Electrical provides dependable residential and commercial electrical service with safety-first workmanship, clear communication, and practical recommendations for Calgary customers.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="rounded-md border border-[#FFD600]/35 bg-[#111] p-5 transition hover:-translate-y-1 hover:border-[#FFD600]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#FFD600]/10 text-[#FFD600]">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3L19 6V11C19 15.5 16.1 19.1 12 21C7.9 19.1 5 15.5 5 11V6L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M8.5 12L11 14.5L16 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <p class="mt-5 text-lg font-black">Licensed</p>
+            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">Qualified electrical work completed with safety and code requirements in mind.</p>
+          </div>
+          <div class="rounded-md border border-[#FFD600]/35 bg-[#111] p-5 transition hover:-translate-y-1 hover:border-[#FFD600]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#FFD600]/10 text-[#FFD600]">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 11V7C7 4.8 8.8 3 11 3H13C15.2 3 17 4.8 17 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                <path d="M5 11H19V21H5V11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M12 15V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <p class="mt-5 text-lg font-black">Insured</p>
+            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">Professional service with responsible job planning and respect for your property.</p>
+          </div>
+          <div class="rounded-md border border-[#FFD600]/35 bg-[#111] p-5 transition hover:-translate-y-1 hover:border-[#FFD600]">
+            <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#FFD600]/10 text-[#FFD600]">
+              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21C12 21 19 14.8 19 9C19 5.1 15.9 2 12 2C8.1 2 5 5.1 5 9C5 14.8 12 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M12 11.5C13.4 11.5 14.5 10.4 14.5 9C14.5 7.6 13.4 6.5 12 6.5C10.6 6.5 9.5 7.6 9.5 9C9.5 10.4 10.6 11.5 12 11.5Z" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </div>
+            <p class="mt-5 text-lg font-black">Local</p>
+            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">Calgary-focused support for homes, businesses, renovations, and urgent repairs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="relative">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,214,0,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.06),transparent_34%)]"></div>
       <div class="relative mx-auto grid min-h-[76vh] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
@@ -122,7 +202,7 @@ onUnmounted(() => {
             Professional residential and commercial electrical service with responsive support, clean workmanship, and code-conscious installs.
           </p>
           <div class="mt-8 flex flex-col gap-4 sm:flex-row">
-            <router-link class="rounded-md bg-[#FFD600] px-6 py-4 text-center font-black text-[#0a0a0a] shadow-[0_0_35px_rgba(255,214,0,0.28)] transition hover:bg-white" to="/contact-us">
+            <router-link class="rounded-md bg-[#FFD600] px-6 py-4 text-center font-black text-[#0a0a0a] shadow-[0_0_35px_rgba(255,214,0,0.28)] transition hover:bg-white" to="/contact">
               Request Service
             </router-link>
             <router-link class="rounded-md border border-[#FFD600] px-6 py-4 text-center font-black text-[#FFD600] transition hover:bg-[#FFD600] hover:text-[#0a0a0a]" to="/services">
@@ -149,6 +229,93 @@ onUnmounted(() => {
               <p class="mt-2 text-sm text-white/60">Safety focused work</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-white/[0.03] px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">What we handle</p>
+            <h2 class="mt-4 max-w-2xl text-3xl font-black leading-tight sm:text-4xl">Practical electrical help for everyday problems and planned upgrades.</h2>
+          </div>
+          <p class="max-w-3xl text-base leading-8 text-white/65 lg:justify-self-end">
+            Whether something stopped working or you are preparing a bigger improvement, SB Electrical keeps the work clear, safe, and organized from the first call.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <article
+            v-for="service in services"
+            :key="service.title"
+            class="group relative min-h-64 overflow-hidden rounded-md border border-white/10 bg-[#0a0a0a] p-5 transition hover:-translate-y-1 hover:border-[#FFD600]/70"
+          >
+            <div class="absolute right-0 top-0 h-24 w-24 border-b border-l border-[#FFD600]/20"></div>
+            <div class="relative flex h-full flex-col justify-between">
+              <div>
+                <span class="inline-flex rounded-md bg-[#FFD600] px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-[#0a0a0a]">{{ service.tag }}</span>
+                <h3 class="mt-6 text-xl font-black">{{ service.title }}</h3>
+                <p class="mt-4 text-sm leading-6 text-white/62">{{ service.copy }}</p>
+              </div>
+              <router-link class="mt-8 inline-flex items-center gap-2 text-sm font-black text-[#FFD600] transition group-hover:text-white" to="/services">
+                View service
+                <span aria-hidden="true">-&gt;</span>
+              </router-link>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div class="rounded-md bg-[#FFD600] p-6 text-[#0a0a0a] shadow-[0_24px_70px_rgba(255,214,0,0.12)] sm:p-8">
+          <p class="text-sm font-black uppercase tracking-[0.3em]">How we work</p>
+          <h2 class="mt-4 text-4xl font-black leading-tight sm:text-5xl">A simpler visit, from first call to final check.</h2>
+          <p class="mt-6 text-base font-semibold leading-8 text-black/70">
+            Electrical work can feel stressful when the problem is hidden behind walls or inside a panel. Our process is built to make the next step clear before tools come out.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-6 top-8 hidden h-[calc(100%-4rem)] w-px bg-[#FFD600]/35 sm:block"></div>
+          <div class="grid gap-5">
+            <div
+              v-for="step in processSteps"
+              :key="step.label"
+              class="relative grid gap-4 rounded-md border border-white/10 bg-white/[0.04] p-5 sm:grid-cols-[auto_1fr] sm:items-start"
+            >
+              <span class="flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#FFD600] bg-[#0a0a0a] text-xs font-black uppercase tracking-[0.12em] text-[#FFD600]">
+                {{ step.label.slice(0, 2) }}
+              </span>
+              <div>
+                <p class="text-xs font-black uppercase tracking-[0.22em] text-[#FFD600]">{{ step.label }}</p>
+                <h3 class="mt-2 text-xl font-black">{{ step.title }}</h3>
+                <p class="mt-3 text-sm leading-6 text-white/62">{{ step.copy }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 pb-16 sm:px-6 lg:px-8">
+      <div class="mx-auto grid max-w-7xl overflow-hidden rounded-md border border-[#FFD600]/30 bg-[#FFD600] text-[#0a0a0a] lg:grid-cols-[1fr_auto]">
+        <div class="p-6 sm:p-8 lg:p-10">
+          <p class="text-sm font-black uppercase tracking-[0.3em]">Need an electrician?</p>
+          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Book reliable electrical service for your Calgary home or business.</h2>
+          <p class="mt-5 max-w-2xl text-base font-semibold leading-7 text-black/70">
+            Send the details once and we will follow up with practical next steps, timing, and the information needed to move forward.
+          </p>
+        </div>
+        <div class="flex flex-col justify-center gap-3 border-t border-black/10 p-6 sm:flex-row sm:items-center lg:border-l lg:border-t-0 lg:p-10">
+          <router-link class="rounded-md bg-[#0a0a0a] px-6 py-4 text-center font-black text-white transition hover:bg-white hover:text-[#0a0a0a]" to="/contact">
+            Request Service
+          </router-link>
+          <a class="rounded-md border border-[#0a0a0a] px-6 py-4 text-center font-black text-[#0a0a0a] transition hover:bg-[#0a0a0a] hover:text-white" href="tel:+14035606052">
+            Call Now
+          </a>
         </div>
       </div>
     </section>

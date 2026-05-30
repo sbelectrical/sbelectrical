@@ -5,10 +5,13 @@ const isOpen = ref(false)
 
 const menuItems = [
   { label: 'Home', to: '/' },
-  { label: 'Who We Are', to: '/who-we-are' },
   { label: 'Services', to: '/services' },
-  { label: 'Contact Us', to: '/contact-us' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Careers', to: '/careers' },
+  { label: 'Contact Us', to: '/contact' },
 ]
+
+const instagramUrl = 'https://www.instagram.com/sb_electric_ltd?igsh=djJ1ZmoxZWNnMW9k'
 </script>
 
 <template>
@@ -47,7 +50,20 @@ const menuItems = [
         >
           {{ item.label }}
         </router-link>
-        <a class="rounded-md bg-[#FFD600] px-5 py-3 text-sm font-black text-[#0a0a0a] shadow-[0_0_28px_rgba(255,214,0,0.25)] transition hover:bg-white" href="tel:+14035550187">
+        <a
+          class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#FFD600]/60 bg-[#FFD600]/10 text-[#FFD600] shadow-[0_0_28px_rgba(255,214,0,0.18)] transition hover:border-white hover:bg-white hover:text-[#0a0a0a]"
+          :href="instagramUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow SB Electrical on Instagram"
+        >
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="2" />
+            <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+            <circle cx="17" cy="7" r="1" fill="currentColor" />
+          </svg>
+        </a>
+        <a class="rounded-md bg-[#FFD600] px-5 py-3 text-sm font-black text-[#0a0a0a] shadow-[0_0_28px_rgba(255,214,0,0.25)] transition hover:bg-white" href="tel:+14035606052">
           Call Now
         </a>
       </div>
@@ -63,8 +79,22 @@ const menuItems = [
       >
         {{ item.label }}
       </router-link>
-      <a class="mt-4 block rounded-md bg-[#FFD600] px-5 py-3 text-center text-sm font-black text-[#0a0a0a]" href="tel:+14035550187">
+      <a class="mt-4 block rounded-md bg-[#FFD600] px-5 py-3 text-center text-sm font-black text-[#0a0a0a]" href="tel:+14035606052">
         Call Now
+      </a>
+      <a
+        class="mt-3 flex items-center justify-center gap-2 rounded-md border border-[#FFD600]/70 bg-white/[0.04] px-5 py-3 text-center text-sm font-black text-[#FFD600]"
+        :href="instagramUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        @click="isOpen = false"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="2" />
+          <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2" />
+          <circle cx="17" cy="7" r="1" fill="currentColor" />
+        </svg>
+        Instagram
       </a>
     </div>
   </header>
