@@ -30,7 +30,7 @@ const sendInquiry = () => {
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2 lg:items-center">
         <div>
           <p class="text-sm font-black uppercase tracking-[0.3em] text-[#FFD600]">Contact Us</p>
-          <h1 class="mt-4 text-4xl font-black leading-tight text-white sm:text-5xl">Call SB Electrical at 403-560-6052.</h1>
+          <h1 class="mt-4 text-4xl font-black leading-tight text-white sm:text-5xl">Call SB Electrical at <span class="whitespace-nowrap">403-560-6052.</span></h1>
           <p class="mt-5 max-w-2xl text-base leading-8 text-[#9ca3af]">
             Reach out for service, estimates, or questions. Use the form to send an email inquiry and we will follow up quickly.
           </p>

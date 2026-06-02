@@ -54,19 +54,19 @@ const projects = [
         <p class="mt-5 text-lg leading-8 text-[#9ca3af]">Quality work across Calgary</p>
       </div>
 
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-5 grid-cols-1 md:grid-cols-2">
         <article
           v-for="project in projects"
           :key="project.title"
           class="group overflow-hidden rounded-md border border-white/10 bg-[#111] transition hover:-translate-y-1 hover:border-[#FFD600]/70"
         >
-          <div class="h-56 overflow-hidden border-t-4 border-transparent transition group-hover:border-[#FFD600]">
+          <div class="h-[380px] overflow-hidden border-t-4 border-transparent transition group-hover:border-[#FFD600]">
             <img :src="project.image" :alt="project.title" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
           </div>
-          <div class="p-5">
+          <div class="p-6">
             <p class="text-xs font-black uppercase tracking-[0.22em] text-[#FFD600]">{{ project.location }}</p>
-            <h2 class="mt-3 text-xl font-black">{{ project.title }}</h2>
-            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">{{ project.description }}</p>
+            <h2 class="mt-4 text-2xl font-black leading-tight text-white">{{ project.title }}</h2>
+            <p class="mt-4 text-sm leading-7 text-[#9ca3af]">{{ project.description }}</p>
             <p class="mt-5 border-t border-white/10 pt-4 text-sm font-bold text-white/75">{{ project.date }}</p>
           </div>
         </article>
