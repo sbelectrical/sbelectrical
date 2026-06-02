@@ -5,7 +5,6 @@ import Projects from '../pages/Projects.vue'
 import Careers from '../pages/Careers.vue'
 import ContactUs from '../pages/ContactUs.vue'
 import AdminLogin from '../pages/AdminLogin.vue'
-import AdminDashboard from '../pages/AdminDashboard.vue'
 import AdminProjects from '../pages/AdminProjects.vue'
 import AdminProjectAdd from '../pages/AdminProjectAdd.vue'
 import AdminCareer from '../pages/AdminCareer.vue'
@@ -17,7 +16,7 @@ const routes = [
   { path: '/careers', component: Careers },
   { path: '/contact', component: ContactUs },
   { path: '/me-admin', component: AdminLogin, meta: { hideLayout: true } },
-  { path: '/me-admin/dashboard', component: AdminDashboard, meta: { hideLayout: true } },
+  { path: '/me-admin/dashboard', redirect: '/me-admin/projects' },
   { path: '/me-admin/projects', component: AdminProjects, meta: { hideLayout: true } },
   { path: '/me-admin/projects/add', component: AdminProjectAdd, meta: { hideLayout: true } },
   { path: '/me-admin/career', component: AdminCareer, meta: { hideLayout: true } },

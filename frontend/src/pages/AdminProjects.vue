@@ -22,37 +22,34 @@ const truncatedDescription = (text) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#090909] text-white">
-    <div class="mx-auto flex min-h-screen max-w-7xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between rounded-3xl border border-white/10 bg-[#111] px-5 py-4 shadow-2xl">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.35em] text-[#FFD600]">Admin</p>
-          <h1 class="mt-2 text-2xl font-black">Admin Dashboard</h1>
-        </div>
+  <div class="min-h-screen bg-[#12110c] text-white">
+    <div class="grid min-h-screen grid-rows-[auto_1fr]">
+      <header class="flex items-center justify-between border-b border-[#FFD600]/15 bg-[#17140d] px-4 py-4 shadow-2xl sm:px-6 lg:px-8">
+        <router-link to="/me-admin/projects" class="text-xs font-black uppercase tracking-[0.35em] text-[#FFD600]">
+          SB Electrical
+        </router-link>
         <button
           @click="logout"
-          class="inline-flex items-center gap-2 rounded-2xl bg-[#FFD600] px-4 py-3 text-sm font-semibold text-black transition hover:bg-[#e6c900]"
+          class="inline-flex items-center justify-center rounded-lg bg-[#FFD600] px-4 py-3 text-sm font-black text-black transition hover:bg-white"
           type="button"
         >
-          <span class="text-lg">⏻</span>
           Logout
         </button>
-      </div>
+      </header>
 
-      <div class="grid flex-1 gap-6 lg:grid-cols-[260px_1fr]">
-        <aside class="rounded-3xl border border-white/10 bg-[#111] p-5">
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#FFD600]">Menu</p>
-          <div class="mt-6 space-y-3">
+      <div class="grid min-h-0 lg:grid-cols-[260px_1fr]">
+        <aside class="border-b border-[#FFD600]/15 bg-[#17140d] p-4 lg:border-b-0 lg:border-r lg:p-5">
+          <div class="flex gap-3 lg:block lg:space-y-3">
             <button
               @click="router.push('/me-admin/projects')"
-              class="w-full rounded-2xl border border-[#FFD600] bg-[#111] px-4 py-3 text-left text-sm font-semibold text-white"
+              class="w-full rounded-lg border border-[#FFD600] bg-[#FFD600]/10 px-4 py-3 text-left text-sm font-black text-white"
               type="button"
             >
               Projects
             </button>
             <button
               @click="router.push('/me-admin/career')"
-              class="w-full rounded-2xl border border-white/10 bg-[#0d0d0d] px-4 py-3 text-left text-sm font-semibold text-white transition hover:border-[#FFD600] hover:bg-[#111]"
+              class="w-full rounded-lg border border-white/10 bg-[#211d14] px-4 py-3 text-left text-sm font-semibold text-white transition hover:border-[#FFD600] hover:bg-[#2b2518]"
               type="button"
             >
               Career
@@ -60,22 +57,22 @@ const truncatedDescription = (text) => {
           </div>
         </aside>
 
-        <section class="rounded-3xl border border-white/10 bg-[#111] p-8">
-          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <section class="min-w-0 bg-[linear-gradient(135deg,#14120d_0%,#19160f_48%,#0f1414_100%)] p-4 sm:p-6 lg:p-8">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-[#FFD600]">Projects</p>
-              <h2 class="mt-4 text-3xl font-black">Project list</h2>
+              <h1 class="text-3xl font-black">Project List</h1>
+              <p class="mt-2 text-sm text-white/55">{{ projectCount }} projects available</p>
             </div>
             <button
               @click="goToAdd"
-              class="inline-flex items-center justify-center rounded-2xl bg-[#FFD600] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#e6c900]"
+              class="inline-flex items-center justify-center rounded-lg bg-[#FFD600] px-5 py-3 text-sm font-black text-black transition hover:bg-white"
               type="button"
             >
               Add Project
             </button>
           </div>
 
-          <div class="mt-8 overflow-x-auto rounded-3xl border border-white/10 bg-[#0d0d0d]">
+          <div class="mt-6 overflow-x-auto rounded-xl border border-white/10 bg-[#17140d] shadow-2xl">
             <table class="min-w-full divide-y divide-white/10 text-left text-sm">
               <thead class="border-b border-white/10 bg-[#111] text-[#cbd5e1]">
                 <tr>
@@ -89,23 +86,23 @@ const truncatedDescription = (text) => {
               <tbody class="divide-y divide-white/10">
                 <tr v-for="project in projects" :key="project.id" class="hover:bg-white/5">
                   <td class="px-6 py-4 align-top">
-                    <img :src="project.image" :alt="project.title" class="h-16 w-24 rounded-2xl object-cover" />
+                    <img :src="project.image" :alt="project.title" class="h-16 w-24 rounded-lg object-cover" />
                   </td>
                   <td class="px-6 py-4 align-top font-semibold text-white">{{ project.title }}</td>
-                  <td class="px-6 py-4 align-top text-[#cbd5e1] max-w-[340px]">{{ truncatedDescription(project.description) }}</td>
+                  <td class="max-w-[340px] px-6 py-4 align-top text-[#cbd5e1]">{{ truncatedDescription(project.description) }}</td>
                   <td class="px-6 py-4 align-top text-[#cbd5e1]">{{ project.location }}</td>
                   <td class="px-6 py-4 align-top">
                     <div class="flex gap-2">
                       <button
                         @click="editProject(project.id)"
-                        class="rounded-2xl bg-[#FFD600] px-3 py-2 text-xs font-semibold text-black transition hover:bg-[#e6c900]"
+                        class="rounded-lg bg-[#FFD600] px-3 py-2 text-xs font-black text-black transition hover:bg-white"
                         type="button"
                       >
                         Edit
                       </button>
                       <button
                         @click="deleteProject(project.id)"
-                        class="rounded-2xl bg-[#ff4d4f] px-3 py-2 text-xs font-semibold text-white transition hover:bg-[#ff6b72]"
+                        class="rounded-lg bg-[#ff4d4f] px-3 py-2 text-xs font-black text-white transition hover:bg-[#ff6b72]"
                         type="button"
                       >
                         Delete
