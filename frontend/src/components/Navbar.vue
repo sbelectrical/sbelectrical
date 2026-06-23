@@ -23,7 +23,7 @@ const instagramUrl = 'https://www.instagram.com/sb_electric_ltd?igsh=djJ1ZmoxZWN
         </span>
         <span>
           <span class="block text-lg font-black leading-tight tracking-wide">SB Electrical</span>
-          <span class="block text-xs font-semibold uppercase tracking-[0.22em] text-[#FFD600]">Calgary Electricians</span>
+          <span class="block text-xs font-semibold uppercase tracking-[0.22em] text-[#FFD600]">Alberta Electricians</span>
         </span>
       </router-link>
 

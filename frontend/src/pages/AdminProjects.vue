@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import adminDashboardBg from '../assets/admin-dashboard-bg.png'
 import { loadProjects, saveProjects } from '../utils/adminProjectStore'
 
 const router = useRouter()
@@ -22,9 +23,11 @@ const truncatedDescription = (text) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-[#12110c] text-white">
-    <div class="grid min-h-screen grid-rows-[auto_1fr]">
-      <header class="flex items-center justify-between border-b border-[#FFD600]/15 bg-[#17140d] px-4 py-4 shadow-2xl sm:px-6 lg:px-8">
+  <div class="relative min-h-screen overflow-hidden bg-[#050505] text-white">
+    <div class="fixed inset-0 bg-cover bg-center" :style="{ backgroundImage: `url(${adminDashboardBg})` }" aria-hidden="true"></div>
+    <div class="fixed inset-0 bg-black/78" aria-hidden="true"></div>
+    <div class="relative grid min-h-screen grid-rows-[auto_1fr]">
+      <header class="flex items-center justify-between border-b border-white/10 bg-black/70 px-4 py-4 shadow-2xl backdrop-blur-md sm:px-6 lg:px-8">
         <router-link to="/me-admin/projects" class="text-xs font-black uppercase tracking-[0.35em] text-[#FFD600]">
           SB Electrical
         </router-link>
@@ -38,18 +41,18 @@ const truncatedDescription = (text) => {
       </header>
 
       <div class="grid min-h-0 lg:grid-cols-[260px_1fr]">
-        <aside class="border-b border-[#FFD600]/15 bg-[#17140d] p-4 lg:border-b-0 lg:border-r lg:p-5">
+        <aside class="border-b border-white/10 bg-black/60 p-4 backdrop-blur-md lg:border-b-0 lg:border-r lg:p-5">
           <div class="flex gap-3 lg:block lg:space-y-3">
             <button
               @click="router.push('/me-admin/projects')"
-              class="w-full rounded-lg border border-[#FFD600] bg-[#FFD600]/10 px-4 py-3 text-left text-sm font-black text-white"
+              class="w-full rounded-lg border border-[#FFD600] bg-[#FFD600]/15 px-4 py-3 text-left text-sm font-black text-white"
               type="button"
             >
               Projects
             </button>
             <button
               @click="router.push('/me-admin/career')"
-              class="w-full rounded-lg border border-white/10 bg-[#211d14] px-4 py-3 text-left text-sm font-semibold text-white transition hover:border-[#FFD600] hover:bg-[#2b2518]"
+              class="w-full rounded-lg border border-white/10 bg-black/35 px-4 py-3 text-left text-sm font-semibold text-white transition hover:border-[#FFD600] hover:bg-[#FFD600]/10"
               type="button"
             >
               Career
@@ -57,7 +60,7 @@ const truncatedDescription = (text) => {
           </div>
         </aside>
 
-        <section class="min-w-0 bg-[linear-gradient(135deg,#14120d_0%,#19160f_48%,#0f1414_100%)] p-4 sm:p-6 lg:p-8">
+        <section class="min-w-0 bg-black/45 p-4 backdrop-blur-sm sm:p-6 lg:p-8">
           <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <h1 class="text-3xl font-black">Project List</h1>
@@ -65,16 +68,16 @@ const truncatedDescription = (text) => {
             </div>
             <button
               @click="goToAdd"
-              class="inline-flex items-center justify-center rounded-lg bg-[#FFD600] px-5 py-3 text-sm font-black text-black transition hover:bg-white"
+              class="inline-flex items-center justify-center rounded-lg bg-[#FFD600] px-5 py-3 text-sm font-black text-black shadow-[0_14px_34px_rgba(255,214,0,0.2)] transition hover:bg-white"
               type="button"
             >
               Add Project
             </button>
           </div>
 
-          <div class="mt-6 overflow-x-auto rounded-xl border border-white/10 bg-[#17140d] shadow-2xl">
+          <div class="mt-6 overflow-x-auto rounded-xl border border-white/10 bg-black/70 shadow-2xl backdrop-blur-md">
             <table class="min-w-full divide-y divide-white/10 text-left text-sm">
-              <thead class="border-b border-white/10 bg-[#111] text-[#cbd5e1]">
+              <thead class="border-b border-white/10 bg-white/5 text-[#cbd5e1]">
                 <tr>
                   <th class="px-6 py-4 font-semibold">Image</th>
                   <th class="px-6 py-4 font-semibold">Title</th>
@@ -84,11 +87,11 @@ const truncatedDescription = (text) => {
                 </tr>
               </thead>
               <tbody class="divide-y divide-white/10">
-                <tr v-for="project in projects" :key="project.id" class="hover:bg-white/5">
+                <tr v-for="project in projects" :key="project.id" class="transition hover:bg-white/5">
                   <td class="px-6 py-4 align-top">
                     <img :src="project.image" :alt="project.title" class="h-16 w-24 rounded-lg object-cover" />
                   </td>
-                  <td class="px-6 py-4 align-top font-semibold text-white">{{ project.title }}</td>
+                  <td class="px-6 py-4 align-top font-bold text-white">{{ project.title }}</td>
                   <td class="max-w-[340px] px-6 py-4 align-top text-[#cbd5e1]">{{ truncatedDescription(project.description) }}</td>
                   <td class="px-6 py-4 align-top text-[#cbd5e1]">{{ project.location }}</td>
                   <td class="px-6 py-4 align-top">

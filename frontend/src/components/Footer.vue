@@ -13,7 +13,7 @@ const instagramUrl = 'https://www.instagram.com/sb_electric_ltd?igsh=djJ1ZmoxZWN
           <span class="text-lg font-black">SB Electrical</span>
         </div>
         <p class="mt-4 max-w-sm text-sm leading-6 text-white/65">
-          Reliable residential and commercial electrical service for Calgary and nearby communities.
+          Reliable residential and commercial electrical service. Serving All of Alberta.
         </p>
         <a
           class="mt-6 inline-flex items-center gap-3 rounded-md border border-[#FFD600]/70 bg-[#FFD600]/10 px-4 py-3 text-sm font-black text-[#FFD600] shadow-[0_0_30px_rgba(255,214,0,0.16)] transition hover:border-white hover:bg-white hover:text-[#0a0a0a]"

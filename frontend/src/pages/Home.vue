@@ -3,24 +3,39 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const services = [
   {
-    title: 'Electrical repairs',
-    copy: 'Troubleshooting for outlets, breakers, switches, fixtures, and wiring issues that need a careful fix.',
-    tag: 'Repair',
+    title: 'Custom House Wiring',
+    copy: 'Complete residential wiring for new builds and custom homes across Alberta.',
+    tag: 'Homes',
   },
   {
-    title: 'Panel upgrades',
-    copy: 'Panel replacement, breaker upgrades, meter service, and safer capacity for modern electrical loads.',
+    title: 'Renovations',
+    copy: 'Electrical upgrades and rewiring for home and commercial renovation projects.',
+    tag: 'Upgrade',
+  },
+  {
+    title: 'EV Charging',
+    copy: 'Level 2 EV charger installation for residential and commercial properties.',
+    tag: 'EV Ready',
+  },
+  {
+    title: 'Service Upgrade',
+    copy: 'Safe and compliant electrical panel and service capacity upgrades.',
     tag: 'Power',
   },
   {
-    title: 'Lighting installs',
-    copy: 'Indoor, outdoor, security, and efficiency-focused lighting installed cleanly for homes and businesses.',
-    tag: 'Lighting',
+    title: 'Multiplex Units',
+    copy: 'Full electrical wiring and installation for duplexes, triplexes and multiplex buildings.',
+    tag: 'Multi-unit',
   },
   {
-    title: 'EV chargers',
-    copy: 'Home charger wiring, circuit checks, and practical setup guidance for electric vehicles.',
-    tag: 'EV Ready',
+    title: 'Commercial Complex',
+    copy: 'Commercial electrical services for offices, retail spaces and business complexes.',
+    tag: 'Commercial',
+  },
+  {
+    title: 'Pharmacy Wiring',
+    copy: 'Specialized electrical wiring for pharmacies meeting health and safety code requirements.',
+    tag: 'Specialty',
   },
 ]
 
@@ -46,8 +61,8 @@ const currentSlide = ref(0)
 
 const slides = [
   {
-    title: 'Trusted Calgary electricians',
-    subtitle: 'Experienced residential and commercial wiring, panel upgrades, and repair work.',
+    title: 'Trusted Alberta electricians',
+    subtitle: 'Experienced custom house wiring, renovations, service upgrades, and commercial electrical work.',
     image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&q=80',
   },
   {
@@ -56,18 +71,18 @@ const slides = [
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80',
   },
   {
-    title: 'Smart lighting upgrades',
-    subtitle: 'Brighten your home or business with modern lighting solutions.',
+    title: 'Renovation electrical upgrades',
+    subtitle: 'Clean wiring and rewiring support for home and commercial renovations.',
     image: 'https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?w=1600&q=80',
   },
   {
-    title: 'Panel and meter service',
-    subtitle: 'Reliable panel repair, replacement, and electrical system inspections.',
+    title: 'Service upgrade specialists',
+    subtitle: 'Reliable panel and service capacity upgrades for modern electrical needs.',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80',
   },
   {
-    title: 'Emergency electrical support',
-    subtitle: 'Fast response for outages, breaker trips, and wiring hazards.',
+    title: 'Commercial complex wiring',
+    subtitle: 'Organized electrical work for offices, retail spaces, pharmacies, and business complexes.',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80',
   },
 ]
@@ -150,9 +165,9 @@ onUnmounted(() => {
       <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Who We Are</p>
-          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Local electricians serving Calgary homes and businesses</h2>
+          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Local electricians serving Alberta homes and businesses</h2>
           <p class="mt-6 max-w-2xl text-base leading-8 text-[#9ca3af]">
-            SB Electrical provides dependable residential and commercial electrical service with safety-first workmanship, clear communication, and practical recommendations for Calgary customers.
+            SB Electrical provides dependable residential and commercial electrical service with safety-first workmanship, clear communication, and practical recommendations for Alberta customers.
           </p>
         </div>
 
@@ -186,7 +201,7 @@ onUnmounted(() => {
               </svg>
             </div>
             <p class="mt-5 text-lg font-black">Local</p>
-            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">Calgary-focused support for homes, businesses, renovations, and urgent repairs.</p>
+            <p class="mt-3 text-sm leading-6 text-[#9ca3af]">Alberta-wide support for homes, businesses, renovations, and service upgrades.</p>
           </div>
         </div>
       </div>
@@ -196,7 +211,7 @@ onUnmounted(() => {
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(255,214,0,0.18),transparent_32%),linear-gradient(135deg,rgba(255,255,255,0.06),transparent_34%)]"></div>
       <div class="relative mx-auto grid min-h-[76vh] max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <div>
-          <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Calgary electrical contractor</p>
+          <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Alberta electrical contractor</p>
           <h1 class="mt-5 max-w-4xl text-5xl font-black leading-tight sm:text-6xl lg:text-7xl">SB Electrical</h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70">
             Professional residential and commercial electrical service with responsive support, clean workmanship, and code-conscious installs.
@@ -245,7 +260,7 @@ onUnmounted(() => {
           </p>
         </div>
 
-        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           <article
             v-for="service in services"
             :key="service.title"
@@ -304,7 +319,7 @@ onUnmounted(() => {
       <div class="mx-auto grid max-w-7xl overflow-hidden rounded-md border border-[#FFD600]/30 bg-[#FFD600] text-[#0a0a0a] lg:grid-cols-[1fr_auto]">
         <div class="p-6 sm:p-8 lg:p-10">
           <p class="text-sm font-black uppercase tracking-[0.3em]">Need an electrician?</p>
-          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Book reliable electrical service for your Calgary home or business.</h2>
+          <h2 class="mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-4xl">Book reliable electrical service for your Alberta home or business.</h2>
           <p class="mt-5 max-w-2xl text-base font-semibold leading-7 text-black/70">
             Send the details once and we will follow up with practical next steps, timing, and the information needed to move forward.
           </p>

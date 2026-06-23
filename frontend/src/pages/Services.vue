@@ -1,34 +1,39 @@
 <script setup>
 const services = [
   {
-    icon: 'M12 2V6M12 18V22M4.9 4.9L7.8 7.8M16.2 16.2L19.1 19.1M2 12H6M18 12H22M4.9 19.1L7.8 16.2M16.2 7.8L19.1 4.9',
-    title: 'Electrical Repairs',
-    description: 'Fast diagnosis and repair of faulty wiring, outlets, switches, and circuits.',
+    icon: 'M4 12L12 5L20 12M6 10.5V20H18V10.5M9 20V14H15V20M9 8.5C10.8 7.2 13.2 7.2 15 8.5',
+    title: 'Custom House Wiring',
+    description: 'We handle complete electrical wiring for new custom homes across Alberta. Every install meets code with clean routing and safe connections throughout.',
   },
   {
-    icon: 'M5 3H19V21H5V3ZM9 7H15M9 11H15M9 15H12',
-    title: 'Panel Upgrades',
-    description: 'Safe and compliant electrical panel replacement and capacity upgrades.',
-  },
-  {
-    icon: 'M9 18H15M10 22H14M12 2C8.7 2 6 4.7 6 8C6 10.2 7.2 11.8 8.8 13.2C9.6 13.9 10 14.8 10 16H14C14 14.8 14.4 13.9 15.2 13.2C16.8 11.8 18 10.2 18 8C18 4.7 15.3 2 12 2Z',
-    title: 'Lighting Installs',
-    description: 'Interior and exterior lighting installation for homes and businesses.',
+    icon: 'M4 20H20M6 20V10L12 4L18 10V20M9 20V14H15V20',
+    title: 'Renovations',
+    description: 'Upgrading or rewiring during a renovation? We handle all electrical work safely and on schedule. From panel changes to new circuits, we keep your project moving.',
   },
   {
     icon: 'M7 2H17M8 2V8H16V2M9 22H15C17.2 22 19 20.2 19 18V12C19 9.8 17.2 8 15 8H9C6.8 8 5 9.8 5 12V18C5 20.2 6.8 22 9 22ZM10 15H14',
-    title: 'EV Charger Installation',
-    description: 'Level 2 EV charger installation for residential and commercial properties.',
+    title: 'EV Charging',
+    description: 'We install Level 2 EV chargers for homes and commercial properties across Alberta. Fast, safe installation with proper load assessment and circuit setup.',
   },
   {
-    icon: 'M13 2L4 14H11L10 22L20 9H13L13 2Z',
-    title: 'Emergency Electrical',
-    description: '24/7 emergency response for outages, tripped breakers, and wiring hazards.',
+    icon: 'M5 3H19V21H5V3ZM9 7H15M9 11H15M9 15H12',
+    title: 'Service Upgrade',
+    description: 'Older panels holding you back? We upgrade electrical services to handle modern power demands. Safe, code-compliant work with minimal disruption.',
   },
   {
-    icon: 'M4 12L12 5L20 12M6 10.5V20H18V10.5M9 20V14H15V20M9 8.5C10.8 7.2 13.2 7.2 15 8.5',
-    title: 'Smart Home Wiring',
-    description: 'Wiring and setup for smart switches, thermostats, and home automation systems.',
+    icon: 'M3 21H21M5 21V7H11V21M13 21V3H19V21M7 11H9M15 7H17M15 11H17M15 15H17',
+    title: 'Multiplex Units',
+    description: 'We wire duplexes, triplexes and multiplex buildings from ground up. Each unit gets proper load distribution, metering and code-compliant installation.',
+  },
+  {
+    icon: 'M3 21H21M5 21V5H19V21M8 9H10M14 9H16M8 13H10M14 13H16M8 17H10M14 17H16',
+    title: 'Commercial Complex',
+    description: 'From retail spaces to office buildings, we deliver reliable commercial electrical solutions. We handle large-scale wiring, lighting and panel work professionally.',
+  },
+  {
+    icon: 'M4 20H20M6 20V8H18V20M9 8V5H15V8M9 14H15M12 11V17',
+    title: 'Pharmacy Wiring',
+    description: 'Pharmacies require precise, code-strict electrical work - we deliver exactly that. Specialized circuits, lighting and safety systems installed to health facility standards.',
   },
 ]
 
@@ -52,14 +57,18 @@ const processSteps = [
 ]
 
 const serviceAreas = [
-  'NE Calgary',
-  'NW Calgary',
-  'SE Calgary',
-  'SW Calgary',
+  'All of Alberta',
+  'Calgary',
+  'Edmonton',
+  'Red Deer',
+  'Lethbridge',
+  'Medicine Hat',
+  'Grande Prairie',
   'Airdrie',
-  'Chestermere',
   'Cochrane',
+  'Chestermere',
   'Okotoks',
+  'And Surrounding Areas',
 ]
 </script>
 
@@ -70,18 +79,18 @@ const serviceAreas = [
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Services</p>
           <h2 class="mt-4 text-3xl font-black sm:text-4xl">Electrical work done right.</h2>
-          <p class="mt-4 max-w-2xl text-white/70">From repairs to lighting upgrades, SB Electrical delivers high-quality installations and fast responsive service for Calgary homes and businesses.</p>
+          <p class="mt-4 max-w-2xl text-white/70">From custom wiring to service upgrades, SB Electrical delivers high-quality installations and fast responsive service for Alberta homes and businesses.</p>
         </div>
         <router-link class="rounded-md border border-white/10 px-5 py-3 text-sm font-bold text-white/75 transition hover:border-[#FFD600] hover:text-[#FFD600]" to="/contact">
           Get an estimate
         </router-link>
       </div>
 
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         <article
           v-for="service in services"
           :key="service.title"
-          class="group flex min-h-72 flex-col justify-between rounded-md border border-white/10 bg-[#111111] p-6 transition hover:-translate-y-1 hover:border-[#FFD600]/70"
+          class="group flex min-h-72 flex-col justify-between rounded-lg border border-white/10 border-l-2 border-l-[#FFD600] border-t-transparent bg-[#111111] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-t-[#FFD600] hover:bg-[#1a1a1a]"
         >
           <div>
             <div class="flex h-14 w-14 items-center justify-center rounded-md border border-[#FFD600]/50 bg-[#FFD600]/10 text-[#FFD600]">
@@ -93,7 +102,7 @@ const serviceAreas = [
             <p class="mt-4 text-sm leading-6 text-[#9ca3af]">{{ service.description }}</p>
           </div>
           <router-link class="mt-8 text-sm font-black text-[#FFD600] transition group-hover:text-white" to="/contact">
-            Learn More -&gt;
+            Get a Quote -&gt;
           </router-link>
         </article>
       </div>
@@ -122,7 +131,7 @@ const serviceAreas = [
 
     <section class="bg-[#111111] px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-7xl">
-        <h2 class="text-3xl font-black leading-tight text-white sm:text-4xl">Serving Calgary &amp; Surrounding Areas</h2>
+        <h2 class="text-3xl font-black leading-tight text-white sm:text-4xl">Serving All of Alberta &amp; Surrounding Areas</h2>
         <div class="mt-8 flex flex-wrap gap-3">
           <span
             v-for="area in serviceAreas"
