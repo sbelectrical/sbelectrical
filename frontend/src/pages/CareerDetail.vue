@@ -6,11 +6,20 @@ import { loadJobs } from '../utils/adminCareerStore'
 const route = useRoute()
 const jobs = loadJobs()
 const job = computed(() => jobs.find((item) => item.id === Number(route.params.id)))
+// Set to true when the company is ready to show open positions again.
+const isHiring = false
 </script>
 
 <template>
   <div class="min-h-screen bg-[#0a0a0a] text-white">
-    <section v-if="job" class="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
+    <section v-if="!isHiring" class="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Careers</p>
+      <h1 class="mt-4 text-3xl font-black">We are not hiring at the moment</h1>
+      <p class="mx-auto mt-5 max-w-xl leading-7 text-[#9ca3af]">Thank you for your interest in S.B. Electrical. We appreciate you taking the time to visit and invite you to check back when new opportunities become available.</p>
+      <router-link class="mt-8 inline-flex rounded-md bg-[#FFD600] px-6 py-4 text-sm font-black text-black transition hover:bg-white" to="/careers">Back to careers</router-link>
+    </section>
+
+    <section v-else-if="job" class="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
       <router-link to="/careers" class="text-sm font-bold text-[#FFD600] transition hover:text-white">Back to jobs</router-link>
 
       <div class="mt-8 border-b border-white/10 pb-8">

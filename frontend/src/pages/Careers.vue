@@ -2,12 +2,14 @@
 import { loadJobs } from '../utils/adminCareerStore'
 
 const jobs = loadJobs()
+// Set to true when the company is ready to show open positions again.
+const isHiring = false
 </script>
 
 <template>
   <div class="min-h-screen bg-[#0a0a0a] text-white">
     <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+      <div v-if="isHiring" class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
         <div>
           <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Careers</p>
           <h1 class="mt-4 text-4xl font-black leading-tight sm:text-5xl">Join Our Team</h1>
@@ -17,7 +19,15 @@ const jobs = loadJobs()
         </p>
       </div>
 
-      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+      <div v-else class="mx-auto max-w-3xl py-10 text-center sm:py-16">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-[#FFD600]">Careers</p>
+        <h1 class="mt-4 text-4xl font-black leading-tight sm:text-5xl">No Current Openings</h1>
+        <div class="mt-8 rounded-md border border-white/10 bg-[#111] p-6 sm:p-8">
+          <p class="text-lg leading-8 text-[#9ca3af]">Thank you for your interest in joining S.B. Electrical. We are not hiring at the moment, but we appreciate your interest and invite you to check back in the future.</p>
+        </div>
+      </div>
+
+      <div v-if="isHiring" class="mt-10 grid gap-5 lg:grid-cols-3">
         <article
           v-for="job in jobs"
           :key="job.id"
